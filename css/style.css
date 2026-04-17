@@ -1,345 +1,497 @@
-/* name: Jay Chao
-create date: 2025-07-01
-section: CST 8285 section 312
-description: Assignment 1 CSS */
+/* =========================================
+   1. Variables & Reset (Red, Black, White Theme)
+   ========================================= */
+:root {
+    /* Red / Black / White Palette */
+    --bg-color: #080606;          /* Deep black base */
+    --bg-color-light: #150909;    /* Dark card background */
+    --bg-surface: rgba(255, 255, 255, 0.04); /* Soft glass surface */
+    --text-primary: #f7f7f7;      /* Clean white text */
+    --text-secondary: #d6d6d6;    /* Soft light gray for secondary text */
+    --accent-color: #ff1f2b;      /* Bold red accent */
+    --accent-glow: rgba(255, 31, 43, 0.16); /* Subtle red glow */
+    --border-color: #590000;      /* Dark red border */
+    
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --nav-height: 80px;
+}
 
-/* body setting */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; 
+}
+
 body {
-  background-color: whitesmoke;
-  font-family: sans-serif;
-  color: #555;
-  margin: 0;
-  display: flex;  /* Enable full page flex layout */
-  flex-direction: column;
-  min-height: 100vh;  /* Make footer stick to bottom */
+    background: radial-gradient(circle at top left, rgba(255, 31, 43, 0.09), transparent 18%),
+                radial-gradient(circle at bottom right, rgba(255, 31, 43, 0.08), transparent 16%),
+                linear-gradient(180deg, #080606 0%, #010101 100%);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* responsive design */
-.container {
-	margin: 0 auto;
-	max-width: 960px;
-	width: 100%;
-  flex: 1;   /* Allow content to expand */
+/* =========================================
+   2. Typography
+   ========================================= */
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-/* navigation style */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px 0;
-}
-
-nav a {
-  padding: 5px 20px;
-  font-size: 12pt;
-  color: #888;
-  border: #888 2px dashed;
-  border-radius: 20px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  border-color: #a50000;
-  color: #a50000;
-}
-
-nav a.active {
-  background-color: #a50000;
-  color: white;
-  border: #a50000 2px solid;
-}
-
-/* header and titles */
-header {
-  margin: 50px 0;
-}
-
-h1 {
-  font-weight: 1000;
-  font-size: 36pt;
-  text-transform: uppercase;
-  color: #a50000;
-  text-align: center;
-  margin: 20px 0px;
-}
-
-h4 {
-  font-size: 16pt;
-  color: #d26e6e;
-  margin: 20px 0 10px;
-}
+h1 { font-size: 2.5rem; color: var(--accent-color); }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
 
 p {
-  font-size: 12pt;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
 }
 
-/* about page */
-#about-me {
-  font-weight: 1000;
-  font-size: 36pt;
-  text-transform: uppercase;
-  color: #a50000;
-  text-align: right;
-  margin: 20px 165px 20px 0px;
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-#desc {
-  color: #ff9595;
-  margin: 20px;
+a:hover {
+    color: #ffffff;
 }
 
-#email {
-  color: #ff9595;
-  text-align: center;
+/* =========================================
+   3. Layout
+   ========================================= */
+.container {
+    max-width: 980px; 
+    margin: 0 auto;
+    padding: calc(var(--nav-height) + 2rem) 2rem 4rem 2rem;
+    flex: 1;
 }
 
-#me {
-  width: 30%;
-  float: left;
-  margin-right: 30px;
+.hero-card {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
 }
 
-#college {
-  color: #a50000;
+.hero-card img {
+    display: block;
+    margin: 0 auto 2rem auto;
 }
 
-/* social links section */
-.social-links ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-  gap: 30px;
+.hero-copy {
+    text-align: center;
 }
 
-.social-links li a {
-  font-size: 14pt;
-  color: #c34646;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+.cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-.social-links li a:hover {
-  color: #888;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.75rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-/* resume tables */
-#summary {
-  font-size: 14pt;
-  margin: 20px 50px;
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #ffffff;
 }
 
-.resume {
-  width: 90%;
-  margin: 30px auto;
-  border-collapse: collapse;
-  font-size: 14pt;
+.btn-primary:hover {
+    background-color: #e01b29;
+    transform: translateY(-2px);
 }
 
-#skills {
-  width: 50%;
-  margin: 0 50px;
-  border-collapse: collapse;
-  font-size: 14pt;
+.btn-outline {
+    border: 1px solid var(--accent-color);
+    color: var(--text-primary);
 }
 
-.resume th,
-.resume td,
-#skills th,
-#skills td {
-  padding: 10px 16px;
-  text-align: left;
+.btn-outline:hover {
+    background-color: rgba(255, 31, 43, 0.12);
 }
 
-.resume th,
-#skills th {
-  background-color: #a50000;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 1px;
+.page-card {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 70px -35px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
 }
 
-.resume td:first-child,
-.resume th:first-child,
-#skills td:first-child,
-#skills th:first-child {
-  width: 200px;  /* label column width */
+.page-card h1 {
+    margin-bottom: 0.75rem;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
-/* contact form */
-.contact-form {
-  max-width: 700px;
-  margin: 40px auto;
-  background-color: #e0e0e0;
-  padding: 24px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+.page-card h2 {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
 }
 
-.contact-form fieldset {
-  border: 1px solid #aaa;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 6px;
+.page-card p {
+    color: var(--text-secondary);
+    text-align: center;
 }
 
-.contact-form legend {
-  font-size: 18pt;
-  font-weight: bold;
-  color: #a50000;
-  padding: 0 10px;
-  text-align: center;
+.page-card .social-links ul {
+    justify-content: center;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
+.resume-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
 }
 
-.form-group label {
-  margin-bottom: 6px;
-  font-size: 14pt;
+@media (max-width: 900px) {
+    .resume-columns {
+        grid-template-columns: 1fr;
+    }
 }
 
-.form-group input,
-.form-group textarea {
-  padding: 8px 0;
-  font-size: 14pt;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  width: 100%;
-}
-
-.form-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.form-buttons button {
-  padding: 8px 20px;
-  font-size: 14pt;
-  border: none;
-  border-radius: 6px;
-  background-color: #a50000;
-  color: white;
-  cursor: pointer;
-}
-
-.form-buttons button:hover {
-  background-color: #7d0000;
-}
-
-/* navigation buttons in porjects */
-#prevBtn,
-#nextBtn {
-  background-color: #a50000;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  min-width: 100px;
-  font-size: 12pt;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 30px;
-}
-
-#prevBtn:hover,
-#nextBtn:hover {
-  background-color: white;
-  color: #a50000;
-  border: 2px solid #a50000;
-}
-
-/* project section */
-.project-slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.slider-controls {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  gap: 700px;
-}
-
-.project-container {
-  display: flex;
-  justify-content: center;
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+    margin-top: 2rem;
 }
 
 .project-card {
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
-  max-width: 900px;
+    background-color: var(--bg-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.75rem;
+    transition: var(--transition);
+    text-align: center;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.75);
 }
 
 .project-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 12px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
 }
 
-.project-card h3 {
-  margin: 0 0 8px;
-  font-size: 18pt;
-  color: #a50000;
+.tech-stack {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-top: 1rem;
+    font-weight: 600;
 }
 
-.project-card h5 {
-  margin: 0 0 8px;
-  font-size: 12pt;
-  color: #d26e6e;
+.section-title {
+    margin-top: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
 }
 
-.project-card p {
-  margin: 4px 0;
-  font-size: 12pt;
-  color: #444;
+#email {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    text-align: center;
 }
 
-/* footer section */
+/* =========================================
+   4. Header & Navigation
+   ========================================= */
+header {
+    background-color: rgba(0, 0, 0, 0.95); /* Solid black navigation background */
+    backdrop-filter: blur(10px); 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-primary);
+    padding: 0.65rem 0.9rem;
+    position: relative;
+    border-radius: 999px;
+    transition: var(--transition);
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+    background: rgba(255, 31, 43, 0.1);
+}
+
+/* Sliding underline effect for navigation */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+
+/* =========================================
+   5. Index Page Specific
+   ========================================= */
+#me {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Circular avatar */
+    border: 3px solid var(--accent-color);
+    object-fit: cover;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    display: block;
+}
+
+#desc {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.8;
+    text-align: center;
+}
+
+#college {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* =========================================
+   6. Resume Page Specific
+   ========================================= */
+h4 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Decorative line next to h4 headings */
+h4::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 1px;
+    margin-left: 1rem;
+    background-color: var(--border-color);
+}
+
+.social-links ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+/* Button-style social links */
+.social-links a {
+    border: 1px solid var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-glow);
+}
+
+/* Table Styles */
+table.resume, #skills {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    background-color: var(--bg-color-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.9);
+}
+
+table th {
+    background-color: #330000; /* Distinct dark red for headers */
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+table.resume tr:hover td {
+    background-color: #330c0c; /* Hover highlight */
+    color: var(--text-primary);
+}
+
+#skills th { width: 50%; }
+#skills td strong { color: var(--text-primary); font-weight: 500; }
+
+/* =========================================
+   7. Contact Form
+   ========================================= */
+.contact-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 40px auto 0 auto;
+    background-color: var(--bg-color-light);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.9);
+}
+
+.contact-form fieldset {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.contact-form legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    padding: 0 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #090707;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 6px;
+    font-family: var(--font-body);
+}
+
+/* Red glow effect on focus */
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.form-buttons button {
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form-buttons button:hover {
+    background-color: #cc1622; /* Slightly deeper red on hover */
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   8. Footer
+   ========================================= */
 footer p {
-  font-size: 10pt;
-  text-align: center;
-  padding: 40px 0 20px;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 20px 0;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
 }
 
-	@media screen and (max-width: 1680px) {
-		.container {
-			width: 68em;
-		}
-	}
-
-	@media screen and (max-width: 1280px) {
-		.container {
-			width: calc(100% - 80px);
-		}
-	}
-
-	@media screen and (max-width: 980px) {
-		.container {
-			width: calc(100% - 100px);
-		}
-	}
-
-	@media screen and (max-width: 736px) {
-		.container {
-			width: calc(100% - 40px);
-		}
-	}
+/* =========================================
+   9. Responsive Design
+   ========================================= */
+@media (max-width: 768px) {
+    html { font-size: 14px; }
+    h1 { font-size: 2rem; }
+    .container { padding: calc(var(--nav-height) + 1rem) 1.5rem 2rem 1.5rem; }
+    nav { gap: 1rem; }
+    #me { width: 120px; height: 120px; }
+}

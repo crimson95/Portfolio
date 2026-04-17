@@ -2,101 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Jay's resume">
-    <meta name="keywords" content="assignment1, cst8285">
-    <meta name="author" content="Jay Chao">
+    <meta name="description" content="Jay Chao - Software Developer Resume">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
-    <title>Resume</title>
+    <title>Resume | Jay Chao</title>
 </head>
-<!-- This page will include the following:
-•	Contact Information
-
-o	Your full name.
-o	Email address.
-o	Phone number (optional).
-o	LinkedIn profile (optional).
-o	Any other relevant contact details (GitHub, personal website, etc.).
-
-•	Summary or Objective 
-A brief, one or two-sentence summary of your career objectives or what you're looking to achieve.
-•	Work Experience
-List your work experiences in reverse chronological order (most recent first).
-Include the job title, the company or organization's name, the location, and the dates of employment. 
-Provide a brief description of your responsibilities, accomplishments, and any relevant achievements for each role.
-•	Skills
-Highlight your technical and soft skills relevant to your field.
-•	Education
-List your educational background, starting with the most recent degree.
-Include the degree earned, the institution's name, the location, and the graduation date. 
-Optionally, you can mention your GPA if it's impressive.
--->
 <body>
     <header>
         <nav>
             <a href="index.html">Home</a>
             <a href="resume.html" class="active">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <a href="dev.html">Dev Projects</a>
+            <a href="design.html">Design Projects</a>
         </nav>
     </header>
     
     <div class="container">
-        <div>
-        <h1>Chieh-Yun Chao (Jay)</h1>
-        <h2 id="email">chao0024@algonquinlive.com</h2>
-            <div class="social-links">
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/ccjay/">My LinkedIn</a></li>
-                    <li><a href="https://github.com/crimson95/algonquinProjects/">My GitHub</a></li>
-                </ul>
-            </div>
-            <h4>Summary</h4>
-            <p id="summary">
-            My main skill are in computer programming and graphic design. I have studied in computer programming program in Algonquin college.
-            And I have trained as a junior designer and intern in the fashion industry. 
-            And I also have five years of experience as an administrative assistant. 
-            I am a motivated, caring, creative and rigorous employee who copes well with work under pressure. 
-            multilingual, I am looking for an inclusive work team that will allow me to showcase my technical skills and improve my competencies.
-            </p>
-        </div>
+        <section class="page-card">
+            <div class="resume-columns">
+                <div>
+                    <h1>Chieh-Yun Chao (Jay)</h1>
+                    <h2 id="email">ccjay8@outlook.com</h2>
+                    
+                    <div class="social-links">
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/ccjay/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://github.com/crimson95/" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
 
-        <div>
-            <h4>Work Experience</h4>
+                    <h4>Professional Summary</h4>
+                    <p>
+                    Motivated Software Developer with a strong foundation in Object-Oriented Programming (Java) and Database Management. Transitioning from a successful career in Graphic Design and Administration, I leverage my aesthetic sensibility and organizational skills to build robust backend systems with clean user interfaces. Multilingual and highly adaptable, seeking to contribute to dynamic engineering teams.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Technical Skills</h4>
+                    <table id="skills">
+                <tr>
+                    <th>Software Development</th>
+                    <th>Design & Languages</th>
+                </tr>
+                <tr>
+                    <td><strong>Core:</strong> Java, SQL, JDBC, MVC Architecture</td>
+                    <td><strong>Tools:</strong> Photoshop, Illustrator, InDesign</td>
+                </tr>
+                <tr>
+                    <td><strong>Web:</strong> HTML5, CSS3, JavaScript</td>
+                    <td><strong>Languages:</strong> Mandarin (Native), English (Adv), Japanese (Adv), French (Int)</td>
+                </tr>
+                <tr>
+                    <td><strong>Tools:</strong> Git, GitHub, Linux, JUnit</td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <h4>Experience</h4>
             <table class="resume">
                 <tr>
                     <th>Period</th>
-                    <th>Job title</th>
+                    <th>Job Title</th>
                     <th>Company</th>
                 </tr>
                 <tr>
                     <td>2020.06 - 2024.12</td>
-                    <td>Localization tester</td>
-                    <td>Global Step</td>
+                    <td>Localization Tester</td>
+                    <td>GlobalStep</td>
                 </tr>
                 <tr>
                     <td>2019.05 - 2020.05</td>
-                    <td>Localization tester</td>
-                    <td>Altagram Group - Game Localization</td>
+                    <td>Localization Tester</td>
+                    <td>Altagram Group</td>
                 </tr>
                 <tr>
                     <td>2020.01 - 2020.03</td>
-                    <td>Junior Designer and Intern</td>
+                    <td>Junior Designer & Intern</td>
                     <td>Midway Industries</td>
                 </tr>
                 <tr>
-                    <td>2018.02 - 2019.02</td>
-                    <td>Localization tester</td>
-                    <td>Global Step</td>
-                </tr>
-                <tr>
-                    <td>2014.04 - 2017.05</td>
-                    <td>Waitress</td>
-                    <td>Kyoto Nishiki Warai</td>
-                </tr>
-                <tr>
                     <td>2008.04 - 2013.03</td>
-                    <td>Administrative assistant</td>
+                    <td>Administrative Assistant</td>
                     <td>Taipei Medical University Hospital</td>
                 </tr>
             </table>
@@ -106,74 +97,31 @@ Optionally, you can mention your GPA if it's impressive.
                 <tr>
                     <th>Period</th>
                     <th>Program</th>
-                    <th>School</th>
+                    <th>Institution</th>
                 </tr>
                 <tr>
-                    <td>2025-2027</td>
+                    <td>2025 - 2027</td>
                     <td>Computer Programming</td>
-                    <td>Algonquin college</td>
+                    <td>Algonquin College</td>
                 </tr>
                 <tr>
-                    <td>2018-2020</td>
+                    <td>2018 - 2020</td>
                     <td>Computer Graphics, DEP</td>
                     <td>Rosemont Technology Centre</td>
                 </tr>
                 <tr>
-                    <td>2015-2017</td>
-                    <td>International Business</td>
-                    <td>ECC Kokusai College of Foreign Language</td>
-                </tr>
-                <tr>
-                    <td>2013-2015</td>
-                    <td>Japanese Language</td>
-                    <td>Shin-Osaka Foreign Language Institute</td>
-                </tr>
-                <tr>
-                    <td>2002-2006</td>
-                    <td>Bachelor of Science in Information management</td>
+                    <td>2002 - 2006</td>
+                    <td>B.S. in Information Management</td>
                     <td>China University of Technology</td>
                 </tr>
             </table>
-
-            <h4>Skills</h4>
-            <table id="skills">
-                <tr>
-                    <th>Technical Skills</th>
-                    <th>Language Skills</th>
-                </tr>
-                <tr>
-                    <td>MS Office</td>
-                    <td>Mandarin Chinese</td>
-                </tr>
-                <tr>
-                    <td>Adobe Softwares</td>
-                    <td>Japanese</td>
-                </tr>
-                <tr>
-                    <td>Java</td>
-                    <td>English</td>
-                </tr>
-                <tr>
-                    <td>SQL</td>
-                    <td>French</td>
-                </tr>
-                <tr>
-                    <td>Web Programming</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Linux</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Database</td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
+                </div>
+            </div>
+        </section>
     </div>
+    
     <footer>
-        <p>Copyright &copy; 2025 Jay Chao. All rights reserved.</p>
+        <p>Copyright &copy; 2026 Jay Chao. All rights reserved.</p>
     </footer>
 </body>
 </html>
