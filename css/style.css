@@ -77,7 +77,7 @@ a:hover {
    3. Layout
    ========================================= */
 .container {
-    max-width: 980px; 
+    max-width: 1200px; 
     margin: 0 auto;
     padding: calc(var(--nav-height) + 2rem) 2rem 4rem 2rem;
     flex: 1;
@@ -144,7 +144,7 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
-    padding: 2.5rem;
+    padding: 2.5rem 4rem;
     box-shadow: 0 25px 70px -35px rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
 }
@@ -171,23 +171,40 @@ a:hover {
     justify-content: center;
 }
 
-.resume-columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem;
+.resume-intro {
+    margin-bottom: 1rem;
 }
 
-@media (max-width: 900px) {
-    .resume-columns {
-        grid-template-columns: 1fr;
-    }
+.resume-section {
+    margin-bottom: 2rem;
+}
+
+.resume-section h4 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.resume-section:first-of-type h4 {
+    margin-top: 1.5rem;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
@@ -214,7 +231,7 @@ a:hover {
 }
 
 .tech-stack {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--accent-color);
     margin-top: 1rem;
     font-weight: 600;
@@ -318,7 +335,66 @@ nav a:hover::after, nav a.active::after {
 }
 
 /* =========================================
-   6. Resume Page Specific
+   6. Resume Table Styles
+   ========================================= */
+.resume-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+    background-color: var(--bg-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.resume-table th {
+    background-color: #250a0a;
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.resume-table td {
+    padding: 15px 20px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.resume-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover Effect */
+.resume-table tr:hover td {
+    color: var(--text-primary);
+    background-color: rgba(255, 31, 43, 0.05);
+}
+
+.resume-section h4 {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .resume-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .resume-date {
+        text-align: left;
+    }
+}
+
+/* =========================================
+   7. Resume Page Specific
    ========================================= */
 h4 {
     margin-top: 3rem;
@@ -359,119 +435,72 @@ h4::after {
     background-color: var(--accent-glow);
 }
 
-/* Table Styles */
-table.resume, #skills {
-    width: 100%;
-    border-collapse: collapse;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skill-category {
     background-color: var(--bg-color-light);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.9);
-}
-
-table th {
-    background-color: #330000; /* Distinct dark red for headers */
-    color: var(--text-primary);
-    font-family: var(--font-heading);
-    text-align: left;
-    padding: 1rem;
-    font-size: 0.9rem;
-}
-
-table td {
-    padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-table.resume tr:hover td {
-    background-color: #330c0c; /* Hover highlight */
-    color: var(--text-primary);
-}
-
-#skills th { width: 50%; }
-#skills td strong { color: var(--text-primary); font-weight: 500; }
-
-/* =========================================
-   7. Contact Form
-   ========================================= */
-.contact-form {
-    width: 100%;
-    max-width: 100%;
-    margin: 40px auto 0 auto;
-    background-color: var(--bg-color-light);
-    padding: 30px;
-    border: 1px solid var(--border-color);
+    padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.9);
-}
-
-.contact-form fieldset {
     border: 1px solid var(--border-color);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.contact-form legend {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--accent-color);
-    padding: 0 10px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-}
-
-.form-group label {
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: var(--text-primary);
-}
-
-.form-group input, .form-group textarea {
-    padding: 12px;
-    font-size: 1rem;
-    background-color: #090707;
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    border-radius: 6px;
-    font-family: var(--font-body);
-}
-
-/* Red glow effect on focus */
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px var(--accent-glow);
-}
-
-.form-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.form-buttons button {
-    padding: 10px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    background-color: var(--accent-color);
-    color: #ffffff;
-    cursor: pointer;
     transition: var(--transition);
 }
 
-.form-buttons button:hover {
-    background-color: #cc1622; /* Slightly deeper red on hover */
-    transform: translateY(-2px);
+.skill-category:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.skill-category h5 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+/* Individual Skill Tag Style */
+.skill-tags span {
+    background-color: rgba(255, 30, 56, 0.1); /* Subtle red tint */
+    color: var(--text-primary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.domain-knowledge {
+    background-color: var(--bg-color-light);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color); /* Highlight with a left border */
+}
+
+.domain-knowledge h5 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.domain-knowledge p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
 }
 
 /* =========================================
