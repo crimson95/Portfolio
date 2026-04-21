@@ -335,61 +335,85 @@ nav a:hover::after, nav a.active::after {
 }
 
 /* =========================================
-   6. Resume Table Styles
+   6. Resume List & Item Styles (Work Experience & Education)
    ========================================= */
-.resume-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 3rem;
+.resume-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.resume-item {
     background-color: var(--bg-color-light);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.resume-table th {
-    background-color: #250a0a;
-    color: var(--accent-color);
-    font-family: var(--font-heading);
-    text-align: left;
-    padding: 15px 20px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid var(--border-color);
-}
-
-.resume-table td {
-    padding: 15px 20px;
-    color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-color);
-    font-size: 0.95rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
     transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.resume-table tr:last-child td {
-    border-bottom: none;
+.resume-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 31, 43, 0.1);
 }
 
-/* Hover Effect */
-.resume-table tr:hover td {
+.resume-info {
+    margin-bottom: 0.8rem;
+}
+
+.resume-info h5 {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.resume-company {
+    font-weight: 500;
     color: var(--text-primary);
-    background-color: rgba(255, 31, 43, 0.05);
+    font-size: 0.95rem;
 }
 
-.resume-section h4 {
-    margin-bottom: 1.5rem;
+.resume-dates {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Responsive adjustment */
+.resume-responsibilities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.resume-responsibilities li {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.resume-responsibilities li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
-    .resume-item {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .resume-date {
-        text-align: left;
+    .resume-list {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -489,18 +513,83 @@ h4::after {
     background-color: var(--bg-color-light);
     padding: 1.5rem;
     border-radius: 12px;
-    border-left: 4px solid var(--accent-color); /* Highlight with a left border */
+    border-left: 4px solid var(--accent-color);
 }
 
 .domain-knowledge h5 {
     color: var(--accent-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
-.domain-knowledge p {
-    margin-bottom: 0;
+.domain-knowledge .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+}
+
+.languages-domain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .languages-domain-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.languages-section {
+    background-color: var(--bg-color-light);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.languages-section h5 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
     font-size: 1rem;
-    color: var(--text-secondary);
+}
+
+.language-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 31, 43, 0.05);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.language-item:hover {
+    background-color: rgba(255, 31, 43, 0.1);
+    border-color: var(--accent-color);
+}
+
+.language-name {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.language-level {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+    background-color: rgba(255, 31, 43, 0.15);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
 }
 
 /* =========================================
