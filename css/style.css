@@ -502,7 +502,7 @@ h4::after {
 
 /* Individual Skill Tag Style */
 .skill-tags span {
-    background-color: rgba(255, 30, 56, 0.1); /* Subtle red tint */
+    background-color: rgba(255, 0, 30, 0.1); /* Subtle red tint */
     color: var(--text-primary);
     padding: 4px 10px;
     border-radius: 4px;
@@ -514,7 +514,7 @@ h4::after {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 30, 56, 0.1); /* Subtle red tint */
+    background-color: rgba(255, 0, 30, 0.1); /* Subtle red tint */
     color: var(--text-primary);
     margin-top: 20px;
     padding: 4px 10px;
