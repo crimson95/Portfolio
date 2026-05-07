@@ -13,9 +13,10 @@ This portfolio was built from scratch without relying on heavy frameworks, demon
 
 ## Featured Projects Included
 This portfolio highlights my recent software engineering projects, including:
-1. **E-Scooter Fleet Management System:** A Java EE web app utilizing MVC architecture and Design Patterns (Strategy, Observer) with MySQL.
+1. **Public Service Application & Case Management System (PSACMS):** A robust Spring Boot backend system designed for complex case management. It features a state machine for strict application workflows, Role-Based Access Control (RBAC), and an append-only audit trail ensuring data integrity and historical tracking.
 2. **Library Management System (LMS):** A backend Java application demonstrating strong DAO pattern implementation and complex JDBC database interactions.
-3. **Dealership Management Mobile App:** A cross-platform Flutter/Dart application featuring local SQLite data persistence and multi-language support (i18n).
+3. **E-Scooter Fleet Management System:** A Java EE web app utilizing MVC architecture and Design Patterns (Strategy, Observer) with MySQL.
+4. **Dealership Management Mobile App:** A cross-platform Flutter/Dart application featuring local SQLite data persistence and multi-language support (i18n).
 
 ## About Me
 I am a detail-oriented developer who blends technical rigor with a creative eye for design. With over 5 years of experience in Software Localization QA, I excel at organizing complex systems, rigorous bug-tracking, and delivering polished results under pressure. 
