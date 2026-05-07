@@ -497,12 +497,26 @@ h4::after {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
+    justify-content: center;
 }
 
 /* Individual Skill Tag Style */
 .skill-tags span {
     background-color: rgba(255, 30, 56, 0.1); /* Subtle red tint */
     color: var(--text-primary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.skill-tags a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 30, 56, 0.1); /* Subtle red tint */
+    color: var(--text-primary);
+    margin-top: 20px;
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 1rem;
