@@ -24,33 +24,15 @@
     <div class="container">
         <section class="page-card">
             <h1>Development Projects</h1>
-            <p>A focused showcase of my programming work, backend systems, and software tools.</p>
+            <p>Backend systems, full-stack web applications, and the tests that keep them honest.</p>
 
             <div class="project-grid">
                 <div class="project-card">
-                    <a href="https://github.com/crimson95/library-management-system" target="_blank">
-                        <img src="images/dev/lms.png" alt="Library Management System">
-                        <h3>Library Management System</h3>
-                        <p>A library management system. I designed the entire database structure and backend logic, and implemented complete CRUD operations. The system features role-based access control, transaction tracking, and MySQL persistence.</p>
-                        <div class="tech-stack">Java | MySQL | JDBC | MVC</div>
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <a href="https://github.com/guan0013/Group4_Final_Project" target="_blank">
-                        <img src="images/dev/e-scooter.png" alt="E-scooter Sharing System">
-                        <h3>E-scooter Sharing System</h3>
-                        <p>This is a group project. I was responsible for designing the Alerts for Predictive Maintenance and Reporting & Analytics sections.</p>
-                        <div class="tech-stack">Java EE | JSP/Servlets | MySQL | Design Patterns | Maven</div>
-                    </a>
-                </div>
-
-                <div class="project-card">
                     <a href="https://github.com/crimson95/PSACMS" target="_blank">
-                        <img src="images/dev/psacms.png" alt="PSACMS">
-                        <h3>PSACMS</h3>
-                        <p>A secure, full-stack Public Service Case Management System built with a Spring Boot RESTful API, JWT authentication, and a Vanilla JS Single-Page Application (SPA).</p>
-                        <div class="tech-stack">Java 17+ | Spring Boot | Spring Security | JWT | RESTful API | MySQL | JavaScript | Bootstrap 5 | SPA</div>
+                        <img src="images/dev/psacms.png" alt="PSACMS officer portal">
+                        <h3>Public Service Application &amp; Case Management System (PSACMS)</h3>
+                        <p>A full-stack case management system modelled on government intake workflows, with separate citizen and officer portals. Stateless JWT authentication and role-based authorization, a status state machine enforced in the service layer, an append-only audit history table, and a global exception handler. API deployed to Render, SPA to GitHub Pages.</p>
+                        <div class="tech-stack">Java 17+ | Spring Boot | Spring Security | JWT | REST API | MySQL | JavaScript SPA | Bootstrap 5 | Docker</div>
                     </a>
                     <div class="skill-tags">
                         <a href="https://crimson95.github.io/PSACMS/" target="_blank">Live Demo</a>
@@ -58,11 +40,38 @@
                 </div>
 
                 <div class="project-card">
+                    <a href="https://github.com/algonquin-college-sat/26s-cst8319-330-group4-project15" target="_blank">
+                        <img src="images/dev/nev_tasklist.png" alt="Nettoyage Eco Vert task list page">
+                        <h3>Cleaning Rotation Tracking System (Capstone)</h3>
+                        <p>Capstone project delivered to Nettoyage Eco Vert, a real cleaning company, and accepted through a signed validation report. A five-person Scrum team built a mobile-friendly web app that replaces manual tracking of rotational cleaning tasks. I owned the rooms, rotations, tasks, and preset-template module, the shared PostgreSQL connection layer, and the seed data, and I wrote and executed the test cases across two prototypes.</p>
+                        <div class="tech-stack">Python | Flask | PostgreSQL | Jinja2 | Flask-Login | ZenHub</div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://github.com/crimson95/ACMECollege" target="_blank">
+                        <img src="images/dev/acme_college.png" alt="ACME College Enterprise System">
+                        <h3>ACME College Enterprise System</h3>
+                        <p>Group project split between a secured REST backend and a JSF front end. On the backend I implemented the JPA entity mappings and relationships, authentication and role-based authorization, the Course and Professor CRUD resources, and the course-registration business logic, and I solely authored a 27-test JUnit integration suite that passed 27/27 at submission.</p>
+                        <div class="tech-stack">Jakarta EE | JPA / Hibernate | JAX-RS | JSF | MySQL | JUnit 5 | Postman</div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://github.com/crimson95/library-management-system" target="_blank">
+                        <img src="images/dev/lms.png" alt="Library Management System">
+                        <h3>Library Management System</h3>
+                        <p>I designed the database schema and backend and implemented full CRUD, role-based access with servlet filters, circulation, and late-fee logic. Manual JDBC transactions (commit/rollback) keep multi-step operations such as checkouts and inventory updates atomic. Built on MVC, DAO, DTO, and Post-Redirect-Get patterns.</p>
+                        <div class="tech-stack">Java 17 | Servlets / JSP | JDBC | MySQL | Apache Tomcat</div>
+                    </a>
+                </div>
+
+                <div class="project-card">
                     <a href="https://github.com/crimson95/mobile_group_project" target="_blank">
                         <img src="images/dev/dealership_management.png" alt="Dealership Management Mobile App">
                         <h3>Dealership Management Mobile App</h3>
-                        <p>This is a group project, a cross-platform mobile application for efficiently managing vehicle inventory, customer data, and sales promotions. The application features a robust local database architecture and multi-language support. I was responsible for the customer data management section.</p>
-                        <div class="tech-stack">Flutter | Dart | SQLite | MVC Architecture | i18n</div>
+                        <p>Group project: a cross-platform mobile application for managing vehicle inventory, customer data, and sales promotions, with a local SQLite database and multi-language support. I was responsible for the customer data management section.</p>
+                        <div class="tech-stack">Flutter | Dart | SQLite | MVC | i18n</div>
                     </a>
                 </div>
 
@@ -70,17 +79,8 @@
                     <a href="https://github.com/crimson95/UlamSpiral" target="_blank">
                         <img src="images/dev/ulam_spiral.png" alt="Ulam Spiral">
                         <h3>Ulam Spiral Algorithm Visualization</h3>
-                        <p>Re-engineered a prime number visualization algorithm from a Processing environment into standard Java. Showcases strong grasp of algorithmic logic, pure Java Graphics2D, and core OOP principles without relying on simplified frameworks.</p>
+                        <p>Re-engineered a prime number visualization algorithm from a Processing sketch into standard Java using Graphics2D and core OOP principles, without relying on a simplified framework.</p>
                         <div class="tech-stack">Java | Algorithms | Graphics2D | Data Visualization</div>
-                    </a>
-                </div>
-                
-                <div class="project-card">
-                    <a href="https://github.com/crimson95/algonquinProjects/tree/main/Assignment 2_web programming/bookproject" target="_blank">
-                        <img src="images/dev/book_catalog.png" alt="Book Catalog Project">
-                        <h3>Book Catalog Project</h3>
-                        <p>This is a group project for managing a book catalog, including search functionality and detailed book information display. I was responsible for JavaScript and PHP backend development and database design.</p>
-                        <div class="tech-stack">HTML | CSS | JavaScript | PHP</div>
                     </a>
                 </div>
             </div>
