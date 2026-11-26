@@ -620,10 +620,39 @@ footer p {
 /* =========================================
    9. Responsive Design
    ========================================= */
+/* Keep the main container full width so it never shrinks to fit its content */
+.container {
+    width: 100%;
+}
+
+/* Decorative heading line: flexible, at most 200px, shrinks on narrow screens */
+h4::after {
+    width: auto;
+    flex: 1;
+    max-width: 200px;
+    min-width: 1rem;
+}
+
 @media (max-width: 768px) {
     html { font-size: 14px; }
     h1 { font-size: 2rem; }
-    .container { padding: calc(var(--nav-height) + 1rem) 1.5rem 2rem 1.5rem; }
+    .container { padding: calc(var(--nav-height) + 1rem) 1rem 2rem 1rem; }
     nav { gap: 1rem; }
     #me { width: 120px; height: 120px; }
+
+    /* Reduce card padding so content gets the screen width */
+    .page-card,
+    .hero-card { padding: 1.5rem 1.25rem; }
+    .project-card { padding: 1.25rem; }
+}
+
+/* Small phones: smaller nav links that never wrap */
+@media (max-width: 480px) {
+    header { padding: 0 0.5rem; }
+    nav { gap: 0.25rem; }
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.6rem;
+        white-space: nowrap;
+    }
 }
