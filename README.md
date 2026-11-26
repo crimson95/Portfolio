@@ -8,7 +8,6 @@ Welcome to my personal portfolio repository! This website is designed to showcas
 This portfolio was built from scratch without relying on heavy frameworks, demonstrating solid fundamental web development skills:
 * **HTML5 & CSS3:** Semantic markup and modern CSS features.
 * **CSS Grid & Flexbox:** Fully responsive, custom card-based layouts and skill tag clouds.
-* **Vanilla JavaScript:** For interactive UI elements.
 * **Design Concept:** A modern, dark-themed UI ("Vampire Red" accent) emphasizing clean data presentation and readability.
 
 ## Featured Projects Included
